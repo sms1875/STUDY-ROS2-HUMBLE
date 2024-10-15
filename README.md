@@ -6,4 +6,4 @@ ros 공부 repo
 windows + docker desktop + ros2 humble
 
 ## 🛠️ 학습자료
-[https://chirpy.cotes.page/](https://www.youtube.com/@pinklab_studio/videos)
+[https://www.youtube.com/@pinklab_studio/videos](https://www.youtube.com/@pinklab_studio/videos)
