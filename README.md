@@ -1,4 +1,4 @@
-# ROS2-HUMBLE-STUDY
+# STUDY-ROS2-HUMBLE
 ros 공부 repo   
 학습내용 : https://sms1875.github.io/categories/ros2/
 
