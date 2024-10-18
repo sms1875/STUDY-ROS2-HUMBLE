@@ -1,0 +1,32 @@
+{
+  "name": "ROS2 Humble", // DevContainer의 이름. VS Code에서 DevContainer를 구분할 때 사용.
+  "image": "osrf/ros:humble-desktop-full", // 사용할 Docker 이미지. 여기서는 ROS2 Humble Desktop Full 이미지 사용.
+  "runArgs": [
+    "--privileged", // 컨테이너가 호스트 시스템의 모든 하드웨어 리소스에 접근할 수 있게 함.
+    "--env=DISPLAY=host.docker.internal:0", // GUI 프로그램 실행을 위해 X11 디스플레이 설정.
+    "--name=ros2-humble" // 생성될 컨테이너의 이름을 'ros2-humble'로 명시.
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/root/ros2-ws,type=bind",
+  // 호스트의 현재 작업 디렉토리를 컨테이너의 /home/ros2-ws에 마운트.
+  "workspaceFolder": "/root/ros2-ws", // 컨테이너 내에서 작업할 기본 폴더를 /home/ros2-ws로 설정.
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.Xauthority,target=/root/.Xauthority,type=bind"
+    // 호스트의 .Xauthority 파일을 컨테이너의 /root/.Xauthority에 마운트하여, 
+    // X11 인증을 통해 GUI 프로그램을 실행할 수 있게 함.
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash" // VS Code의 기본 터미널 셸을 Bash로 설정.
+      },
+      "extensions": [
+        "ms-vscode.cpptools", // C++ 개발을 위한 확장.
+        "ms-python.python", // Python 개발을 위한 확장.
+        "ms-vscode.cmake-tools", // CMake 프로젝트를 관리하고 빌드하기 위한 확장.
+        "twxs.cmake", // CMake 파일에 대한 추가적인 문법 강조와 지원을 제공하는 확장.
+        "ms-iot.vscode-ros" // ROS (Robot Operating System) 개발을 위한 확장.
+      ]
+    }
+  },
+  "postCreateCommand": "chmod +x ~/ros2-ws/.devcontainer/setup.sh && /bin/bash ~/ros2-ws/.devcontainer/setup.sh" // setup.sh 파일
+}
