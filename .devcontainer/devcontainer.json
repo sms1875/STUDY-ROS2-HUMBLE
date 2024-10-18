@@ -7,8 +7,8 @@
     "--name=ros2-humble" // 생성될 컨테이너의 이름을 'ros2-humble'로 명시.
   ],
   "workspaceMount": "source=${localWorkspaceFolder},target=/root/ros2-ws,type=bind",
-  // 호스트의 현재 작업 디렉토리를 컨테이너의 /home/ros2-ws에 마운트.
-  "workspaceFolder": "/root/ros2-ws", // 컨테이너 내에서 작업할 기본 폴더를 /home/ros2-ws로 설정.
+  // 호스트의 현재 작업 디렉토리를 컨테이너의 ~/ros2-ws에 마운트.
+  "workspaceFolder": "/root/ros2-ws", // 컨테이너 내에서 작업할 기본 폴더를 ~/ros2-ws로 설정.
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.Xauthority,target=/root/.Xauthority,type=bind"
     // 호스트의 .Xauthority 파일을 컨테이너의 /root/.Xauthority에 마운트하여, 
