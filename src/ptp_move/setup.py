@@ -25,7 +25,8 @@ setup(
             'ptp_move_node = ptp_move.ptp_move_node:main',
             'ptp_move_input_node = ptp_move.ptp_move_input_node:main',
             'ptp_move_setpos_node = ptp_move.ptp_move_setpos_node:main',
-            'dobot_multi_control_pkg_node = ptp_move.dobot_multi_control_pkg_node:main'
+            'dobot_multi_control_pkg_node = ptp_move.dobot_multi_control_pkg_node:main',
+            'object_detection_node = ptp_move.object_detection_node:main'
         ],
     },
 )
